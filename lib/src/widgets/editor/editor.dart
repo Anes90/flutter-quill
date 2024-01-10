@@ -118,10 +118,12 @@ abstract class RenderAbstractEditor implements TextLayoutMetrics {
 }
 
 class QuillEditor extends StatefulWidget {
+  final CursorStyle? cursorStyle;
   const QuillEditor({
     required this.configurations,
     required this.focusNode,
     required this.scrollController,
+    this.cursorStyle,
     super.key,
   });
 
@@ -246,7 +248,7 @@ class QuillEditorState extends State<QuillEditor>
                 supportWeb: true,
               ),
               showCursor: configurations.showCursor ?? true,
-              cursorStyle: CursorStyle(
+              cursorStyle: widget.cursorStyle ?? CursorStyle(
                 color: cursorColor,
                 backgroundColor: Colors.grey,
                 width: 2,
