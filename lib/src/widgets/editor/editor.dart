@@ -118,7 +118,6 @@ abstract class RenderAbstractEditor implements TextLayoutMetrics {
 }
 
 class QuillEditor extends StatefulWidget {
-  final CursorStyle? cursorStyle;
   const QuillEditor({
     required this.configurations,
     required this.focusNode,
@@ -147,6 +146,7 @@ class QuillEditor extends StatefulWidget {
       ),
     );
   }
+  final CursorStyle? cursorStyle;
 
   /// The configurations for the quill editor widget of flutter quill
   final QuillEditorConfigurations configurations;
